@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logoap{
+    width: 150px;
+}
+img{
+    width: 45px;
+    margin-right: 5px;
+}
+button{
+    margin-right: 8px;
+    border-width: medium;
+    font-weight: bold;
+}
+
+@media (max-width: 575px){
+.container{
+    flex-direction: column;
+}
+.redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.redes img{
+    margin: 0.2em;
+}
+}
