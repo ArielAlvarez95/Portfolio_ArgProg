@@ -1,0 +1,6 @@
+com\portfolioap\argprog\Interface\IPersonaService.class
+com\portfolioap\argprog\Entity\Persona.class
+com\portfolioap\argprog\Controller\IPersonaController.class
+com\portfolioap\argprog\Repository\IPersonaRepository.class
+com\portfolioap\argprog\Service\ImpPersonaService.class
+com\portfolioap\argprog\ArgprogApplication.class
