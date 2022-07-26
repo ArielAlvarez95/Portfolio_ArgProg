@@ -1,6 +1,7 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img src="../../../assets/foto-de-perfil.jpg" class="img-fluid" id="fotodeperfil">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" class="image" id="img">
+        <input type="file" (change)="uploadImage($event)">
+        <img [src]="images"  *ngFor="let image of images">
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
         <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
