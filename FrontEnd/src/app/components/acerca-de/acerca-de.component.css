@@ -8,7 +8,7 @@ div{
     text-align: center;
 }
 #nombre{
-    margin-top: 20px;
+    margin-top: 45px;
     font-weight: bold;
 }
 @media (min-width: 576px) {
@@ -16,7 +16,7 @@ div{
         position: absolute;
         width: 12%;
         border-radius: 100%;
-        left: 3%;
+        left: 3.6%;
         border-style: solid;
         top: 370px;
     }
