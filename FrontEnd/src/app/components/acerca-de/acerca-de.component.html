@@ -1,16 +1,16 @@
 <div class="row">
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" class="image" id="img">
-        <input type="file" (change)="uploadImage($event)">
-        <img [src]="images"  *ngFor="let image of images">
+        <input type="file" (change)="uploadImage($event)" *ngIf="isLogged">
+        <img [src]="images" *ngFor="let image of images">
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
         <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
         <p>Full Stack Developer Jr.</p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
         <span>
             <h1>Acerca de mi</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            <p id="descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                 Tempora molestiae possimus laudantium, autem eveniet ea ut rem provident iure quam 
                 debitis dignissimos id placeat repellat architecto ad iste non repudiandae.</p>
         </span>

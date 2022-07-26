@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/service/persona.service';
 import { persona } from 'src/model/persona.model';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage'
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -9,18 +10,22 @@ import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fir
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  persona: persona = new persona("","","");
-
+  persona: persona = new persona("","",""); 
   images: string[];
 
-  constructor(public personaService: PersonaService, private storage: Storage) { 
+  constructor(public personaService: PersonaService, private storage: Storage, private tokenService: TokenService) { 
     this.images = [];
   }
   
+    isLogged = false;
 
   ngOnInit(): void {
     this.personaService.getPersona().subscribe(data => {this.persona = data})
-    this.getImages();
+    this.getImages(); 
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.uploadImage;
+    }
   }
 
   uploadImage($event: any){
