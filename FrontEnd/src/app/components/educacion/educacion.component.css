@@ -9,3 +9,12 @@ div{
 h1, h3{
     display: inline;
 }
+td{
+    margin-left: 50%;
+}
+#logo{
+    margin-left: 30%;
+}
+#logotipo{
+    width: 15%;
+}

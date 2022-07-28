@@ -10,7 +10,7 @@ import { Educacion } from 'src/model/educacion';
 })
 export class EducacionComponent implements OnInit {
   educ: Educacion[] = [];
-
+  
   constructor(private sEducacion: sEducacionService, private tokenService: TokenService) { }
 
   isLogged = false;
@@ -39,5 +39,5 @@ export class EducacionComponent implements OnInit {
         }
       )
     }
-}
+  }
 }
