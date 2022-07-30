@@ -1,122 +1,21 @@
 <div class="row">
-    <h1>Hard & Soft Skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="60"
-    [radius]="100"
-    [imageSrc]="'../assets/html.png'"
-    [imageHeight]="120"
-    [imageWidth]="120"
-    [showImage]="true"
-    [showUnits]="false"
-    [showSubtitle]="false"
-    [titleFontSize]="'2em'"
-    [outerStrokeWidth]="14"
-    [innerStrokeWidth]="5"
-    [outerStrokeColor]="'green'"
-    [innerStrokeColor]="'green'"
-    [animation]="true"
-    [animationDuration]="600"
-    ></circle-progress>
-    <h3>HTML5</h3>
+    <h1>Habilidades</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevahab" *ngIf="isLogged">
+            Agregar Habilidad
+        </button>
     </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="60"
-        [radius]="100"
-        [imageSrc]="'../assets/css.png'"
-        [imageHeight]="120"
-        [imageWidth]="120"
-        [showImage]="true"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'2em'"
-        [outerStrokeWidth]="14"
-        [innerStrokeWidth]="5"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'green'"
-        [animation]="true"
-        [animationDuration]="600"
-        ></circle-progress>
-        <h3>CSS</h3>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="50"
-            [radius]="100"
-            [imageSrc]="'../assets/JS.png'"
-            [imageHeight]="110"
-            [imageWidth]="100"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [titleFontSize]="'2em'"
-            [outerStrokeWidth]="14"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'green'"
-            [innerStrokeColor]="'green'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-            <h3>Javascript</h3>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="90"
-        [radius]="100"
-        [imageSrc]="'../assets/eng.png'"
-        [imageHeight]="120"
-        [imageWidth]="120"
-        [showImage]="true"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'2em'"
-        [outerStrokeWidth]="14"
-        [innerStrokeWidth]="5"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'green'"
-        [animation]="true"
-        [animationDuration]="600"
-        ></circle-progress>
-        <h3>Ingles</h3>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="80"
-            [radius]="100"
-            [imageSrc]="'../assets/grupal.png'"
-            [imageHeight]="137"
-            [imageWidth]="137"
-            [showImage]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [titleFontSize]="'2em'"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'green'"
-            [innerStrokeColor]="'green'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-            <h3>Trabajo en equipo</h3>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-                <circle-progress
-                [percent]="90"
-                [radius]="100"
-                [imageSrc]="'../assets/TIME.png'"
-                [imageHeight]="140"
-                [imageWidth]="140"
-                [showImage]="true"
-                [showUnits]="false"
-                [showSubtitle]="false"
-                [titleFontSize]="'2em'"
-                [outerStrokeWidth]="14"
-                [innerStrokeWidth]="5"
-                [outerStrokeColor]="'green'"
-                [innerStrokeColor]="'green'"
-                [animation]="true"
-                [animationDuration]="600"
-                ></circle-progress>
-                <h3>Manejo del Tiempo</h3>
-    </div>
+</div>
+<div class="row" *ngFor="let Habilidades of habilidad">   
+    <div class="progress"   style="height: 30px;" >
+        <div class="progress-bar" style="width: {{Habilidades.porcentajeH}}%" role="progressbar" > <h2>{{Habilidades.nombreH}} - {{Habilidades.porcentajeH}}%</h2></div>
+      </div>
+      <td *ngIf="isLogged">
+        <button class="btn btn-light" routerLink="/edithab/{{Habilidades.id}}">
+            <i class="bi bi-pencil-fill"></i> EDITAR</button>
+    </td>
+    <td *ngIf="isLogged">
+        <button class="btn btn-danger" (click)="delete(Habilidades.id)">
+            <i class="bi bi-trash-fill"></i> BORRAR</button>
+    </td>  
+</div>

@@ -24,6 +24,8 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion.co
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { NewHabilidadComponent } from './components/habilidades/new-habilidad.component';
+import { EditHabilidadComponent } from './components/habilidades/edit-habilidad.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     NewExperienciaComponent,
     EditExperienciaComponent,
     NewEducacionComponent,
-    EditEducacionComponent
+    EditEducacionComponent,
+    NewHabilidadComponent,
+    EditHabilidadComponent,
   ],
   imports: [
     BrowserModule,
